@@ -1,4 +1,4 @@
-package com.huntdreams.ch02;
+package com.huntdreams.simulation;
 
 /**
  * ClassificationConstants
