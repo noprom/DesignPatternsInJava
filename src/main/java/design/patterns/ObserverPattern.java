@@ -10,22 +10,35 @@ package design.patterns;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observer;
+
+interface IObserver {
+    void update(int value);
+}
 
 /**
  * 观察者
  */
-class Observer {
-    public void update() {
-        System.out.println("flag value has been changed in observer");
+class Observer1 implements IObserver {
+
+    public void update(int value) {
+        System.out.println("Observer1: value has been changed to " + value);
+    }
+}
+
+class Observer2 implements IObserver {
+
+    public void update(int value) {
+        System.out.println("Observer2: value has been changed to " + value);
     }
 }
 
 interface ISubject {
-    void register(Observer observer);
+    void register(IObserver observer);
 
-    void unregister(Observer observer);
+    void unregister(IObserver observer);
 
-    void notifyObservers();
+    void notifyObservers(int modifiedValue);
 }
 
 /**
@@ -33,30 +46,30 @@ interface ISubject {
  */
 class Subject implements ISubject {
 
-    List<Observer> observerList = new ArrayList<Observer>();
-    private int flag;
+    List<IObserver> observerList = new ArrayList<IObserver>();
+    private int value;
 
-    public int getFlag() {
-        return flag;
-    }
-
-    public void setFlag(int flag) {
-        this.flag = flag;
-        notifyObservers();
-    }
-
-    public void register(Observer observer) {
+    public void register(IObserver observer) {
         observerList.add(observer);
     }
 
-    public void unregister(Observer observer) {
+    public void unregister(IObserver observer) {
         observerList.remove(observer);
     }
 
-    public void notifyObservers() {
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+        notifyObservers(value);
+    }
+
+    public void notifyObservers(int modifiedValue) {
         for (int i = 0, size = observerList.size();
              i < size; i++) {
-            observerList.get(i).update();
+            observerList.get(i).update(modifiedValue);
         }
     }
 }
@@ -64,18 +77,19 @@ class Subject implements ISubject {
 public class ObserverPattern {
 
     public static void main(String[] args) {
-        System.out.println("***Observer Pattern Demo***\n");
-        Observer o1 = new Observer();
-        Subject sub1 = new Subject();
-        sub1.register(o1);
-        System.out.println("Setting Flag = 5 ");
-        sub1.setFlag(5);
-        System.out.println("Setting Flag = 25 ");
-        sub1.setFlag(25);
-        sub1.unregister(o1);
-        // No notification this time to o1 .
-        // Since it is unregistered.
-        System.out.println("Setting Flag = 50 ");
-        sub1.setFlag(50);
+        System.out.println("*** Modified Observer Pattern Demo***\n");
+        Subject sub = new Subject();
+        Observer1 ob1 = new Observer1();
+        Observer2 ob2 = new Observer2();
+        sub.register(ob1);
+        sub.register(ob2);
+        sub.setValue(5);
+        System.out.println();
+        sub.setValue(25);
+        System.out.println();
+        //unregister ob1 only
+        sub.unregister(ob1);
+        //Now only ob2 will observe the change
+        sub.setValue(100);
     }
 }
