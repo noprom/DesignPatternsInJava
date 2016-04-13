@@ -73,7 +73,7 @@ class Subject implements ISubject {
     }
 }
 
-public class ObserverPattern {
+public class ObserverPattern2 {
 
     public static void main(String[] args) {
         System.out.println("*** Modified Observer Pattern Demo***\n");

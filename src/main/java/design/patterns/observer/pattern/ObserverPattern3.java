@@ -105,7 +105,7 @@ class Subject2 implements ISubject {
     }
 }
 
-public class ObserverPattern2 {
+public class ObserverPattern3 {
 
     public static void main(String[] args) {
         System.out.println("*** Observer Pattern Demo3 ***\n");
