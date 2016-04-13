@@ -70,5 +70,3 @@ public class ObserverPattern {
         sub1.setFlag(50);
     }
 }
-
-//策略 桥 适配器 iterator factory 观察者 组合体 单例模式
