@@ -10,7 +10,6 @@ package design.patterns;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observer;
 
 interface IObserver {
     void update(int value);
