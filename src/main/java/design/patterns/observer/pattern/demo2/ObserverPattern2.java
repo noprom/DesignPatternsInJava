@@ -1,4 +1,4 @@
-package design.patterns;
+package design.patterns.observer.pattern.demo2;
 
 /**
  * ObserverPattern
