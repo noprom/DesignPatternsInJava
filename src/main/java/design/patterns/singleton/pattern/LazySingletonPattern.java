@@ -8,11 +8,11 @@ package design.patterns.singleton.pattern;
  * Author: Noprom <tyee.noprom@qq.com>
  * Date: 4/22/16 10:06 AM.
  */
-class MakeACaptain {
-    private static MakeACaptain captain;
+class LazyCaptain {
+    private static LazyCaptain captain;
 
     //We make the constructor private to prevent the use of "new"
-    private MakeACaptain() {
+    private LazyCaptain() {
 
     }
 
@@ -22,10 +22,10 @@ class MakeACaptain {
      *
      * @return
      */
-    public synchronized static MakeACaptain getCaptain() {
+    public synchronized static LazyCaptain getCaptain() {
         // Lazy initialization
         if (captain == null) {
-            captain = new MakeACaptain();
+            captain = new LazyCaptain();
             System.out.println("New Captain selected for our team");
         } else {
             System.out.print("You already have a Captain for your team.");
@@ -40,9 +40,9 @@ public class LazySingletonPattern {
     public static void main(String[] args) {
         System.out.println("***Singleton Pattern Demo***\n");
         System.out.println("Trying to make a captain for our team");
-        MakeACaptain c1 = MakeACaptain.getCaptain();
+        LazyCaptain c1 = LazyCaptain.getCaptain();
         System.out.println("Trying to make another captain for our team");
-        MakeACaptain c2 = MakeACaptain.getCaptain();
+        LazyCaptain c2 = LazyCaptain.getCaptain();
         if (c1 == c2) {
             System.out.println("c1 and c2 are same instance");
         }
