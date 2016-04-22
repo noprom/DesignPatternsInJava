@@ -2,7 +2,8 @@ package design.patterns.singleton.pattern;
 
 /**
  * SingletonPattern
- * 单例模式
+ * 单例模式:懒汉模式
+ * 需要使用synchronized来保持线程安全
  * <p/>
  * Author: Noprom <tyee.noprom@qq.com>
  * Date: 4/22/16 10:06 AM.
@@ -15,7 +16,13 @@ class MakeACaptain {
 
     }
 
-    public static MakeACaptain getCaptain() {
+    /**
+     * 获得单例,但是需要使用synchronized来保持线程安全
+     * 在性能上会有一些影响
+     *
+     * @return
+     */
+    public synchronized static MakeACaptain getCaptain() {
         // Lazy initialization
         if (captain == null) {
             captain = new MakeACaptain();
