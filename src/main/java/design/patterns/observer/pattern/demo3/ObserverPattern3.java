@@ -15,39 +15,39 @@ interface IObserver {
 }
 
 interface ISubject {
-    void register(design.patterns.observer.pattern.demo3.IObserver observer);
+    void register(IObserver observer);
 
-    void unregister(design.patterns.observer.pattern.demo3.IObserver observer);
+    void unregister(IObserver observer);
 
     void notifyObservers(int modifiedValue);
 }
 
-class Observer1 implements design.patterns.observer.pattern.demo3.IObserver {
+class Observer1 implements IObserver {
 
     public void update(String s, int value) {
         System.out.println("Observer1 in " + s + ": value has been changed to " + value);
     }
 }
 
-class Observer2 implements design.patterns.observer.pattern.demo3.IObserver {
+class Observer2 implements IObserver {
 
     public void update(String s, int value) {
         System.out.println("Observer2 in " + s + ": value has been changed to " + value);
     }
 }
 
-class Observer3 implements design.patterns.observer.pattern.demo3.IObserver {
+class Observer3 implements IObserver {
 
     public void update(String s, int value) {
         System.out.println("Observer3 in " + s + ": value has been changed to " + value);
     }
 }
 
-class Subject1 implements design.patterns.observer.pattern.demo3.ISubject {
+class Subject1 implements ISubject {
 
     private int value;
 
-    List<design.patterns.observer.pattern.demo3.IObserver> observerList = new ArrayList<design.patterns.observer.pattern.demo3.IObserver>();
+    List<IObserver> observerList = new ArrayList<IObserver>();
 
     public int getValue() {
         return value;
@@ -58,11 +58,11 @@ class Subject1 implements design.patterns.observer.pattern.demo3.ISubject {
         notifyObservers(value);
     }
 
-    public void register(design.patterns.observer.pattern.demo3.IObserver observer) {
+    public void register(IObserver observer) {
         observerList.add(observer);
     }
 
-    public void unregister(design.patterns.observer.pattern.demo3.IObserver observer) {
+    public void unregister(IObserver observer) {
         observerList.remove(observer);
     }
 
@@ -74,11 +74,11 @@ class Subject1 implements design.patterns.observer.pattern.demo3.ISubject {
     }
 }
 
-class Subject2 implements design.patterns.observer.pattern.demo3.ISubject {
+class Subject2 implements ISubject {
 
     private int value;
 
-    List<design.patterns.observer.pattern.demo3.IObserver> observerList = new ArrayList<design.patterns.observer.pattern.demo3.IObserver>();
+    List<IObserver> observerList = new ArrayList<IObserver>();
 
     public int getValue() {
         return value;
@@ -89,11 +89,11 @@ class Subject2 implements design.patterns.observer.pattern.demo3.ISubject {
         notifyObservers(value);
     }
 
-    public void register(design.patterns.observer.pattern.demo3.IObserver observer) {
+    public void register(IObserver observer) {
         observerList.add(observer);
     }
 
-    public void unregister(design.patterns.observer.pattern.demo3.IObserver observer) {
+    public void unregister(IObserver observer) {
         observerList.remove(observer);
     }
 
@@ -111,8 +111,8 @@ public class ObserverPattern3 {
         System.out.println("*** Observer Pattern Demo3 ***\n");
         Subject1 sub1 = new Subject1();
         Subject2 sub2 = new Subject2();
-        design.patterns.observer.pattern.demo3.Observer1 ob1 = new design.patterns.observer.pattern.demo3.Observer1();
-        design.patterns.observer.pattern.demo3.Observer2 ob2 = new design.patterns.observer.pattern.demo3.Observer2();
+        Observer1 ob1 = new Observer1();
+        Observer2 ob2 = new Observer2();
         Observer3 ob3 = new Observer3();
         //Observer1 and Observer2 registers to Subject 1
         sub1.register(ob1);
