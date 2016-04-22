@@ -35,7 +35,7 @@ class MakeACaptain {
     }
 }
 
-public class SingletonPattern {
+public class LazySingletonPattern {
 
     public static void main(String[] args) {
         System.out.println("***Singleton Pattern Demo***\n");
