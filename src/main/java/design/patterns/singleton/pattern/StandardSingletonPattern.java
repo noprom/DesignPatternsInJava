@@ -4,6 +4,7 @@ package design.patterns.singleton.pattern;
  * StandardSingletonPattern
  * 标准的单例模式,不需要使用带有synchronized的懒汉模式
  * 和饿汉模式
+ * 既实现了线程安全,又避免了同步带来的性能影响
  * <p/>
  * Author: Noprom <tyee.noprom@qq.com>
  * Date: 4/22/16 10:22 AM.
