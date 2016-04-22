@@ -8,7 +8,7 @@ package design.patterns.singleton.pattern;
  * Date: 4/22/16 10:24 AM.
  */
 class EagerCaptain {
-    private static EagerCaptain captain = new EagerCaptain();
+    private static final EagerCaptain captain = new EagerCaptain();
 
     private EagerCaptain() {
     }
