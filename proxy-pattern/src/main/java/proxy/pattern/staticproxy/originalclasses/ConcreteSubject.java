@@ -1,7 +1,8 @@
-package proxy.pattern.originalclasses;
+package proxy.pattern.staticproxy.originalclasses;
 
 /**
  * ConcreteSubject
+ * 真实的角色
  * <p/>
  * Author: Noprom <tyee.noprom@qq.com>
  * Date: 5/9/16 9:01 AM.
