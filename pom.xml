@@ -12,6 +12,7 @@
         <module>proxy-pattern</module>
         <module>strategy-pattern</module>
         <module>adapter-pattern</module>
+        <module>bridge-pattern</module>
     </modules>
 
 
