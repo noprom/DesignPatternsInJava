@@ -14,6 +14,7 @@
         <module>adapter-pattern</module>
         <module>bridge-pattern</module>
         <module>composite-pattern</module>
+        <module>observer-pattern</module>
     </modules>
 
 
