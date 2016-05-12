@@ -15,6 +15,7 @@
         <module>bridge-pattern</module>
         <module>composite-pattern</module>
         <module>observer-pattern</module>
+        <module>singleton-pattern</module>
     </modules>
 
 
