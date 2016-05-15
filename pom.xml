@@ -18,6 +18,8 @@
         <module>singleton-pattern</module>
         <module>iterator-pattern</module>
         <module>factory-method-pattern</module>
+        <module>builder-pattern</module>
+        <module>abstract-factory-pattern</module>
     </modules>
 
 
