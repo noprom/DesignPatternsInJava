@@ -17,6 +17,7 @@
         <module>observer-pattern</module>
         <module>singleton-pattern</module>
         <module>iterator-pattern</module>
+        <module>factory-method-pattern</module>
     </modules>
 
 
