@@ -1,7 +1,5 @@
 package bridge.pattern.demo;
 
-import sun.security.provider.SHA;
-
 /**
  * BridgePatternEx
  * <p/>
